@@ -1,0 +1,29 @@
+<h1>Listing vendas</h1>
+
+<table>
+  <tr>
+    <th>Data da venda</th>
+    <th>Resposavel pela venda</th>
+    <th>Cliente</th>
+    <th>Usuario</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @vendas.each do |venda| %>
+  <tr>
+    <td><%= venda.data_da_venda.strftime "%d/%m/%Y" %></td>
+    <td><%= (venda.resposavel_pela_venda) ? venda.resposavel_pela_venda : link_to(venda.representante.nome, venda.representante) %></td>
+    <td><%= link_to venda.cliente.nome, venda.cliente %></td>
+    <td><%= venda.usuario.username %></td>
+    <td><%= link_to 'Show', venda %></td>
+    <td><%= link_to 'Edit', edit_venda_path(venda) %></td>
+    <td><%= link_to 'Destroy', venda, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Venda', new_venda_path %>

@@ -1,0 +1,36 @@
+<%= simple_form_for @venda do |f| %>
+	<% if @venda.errors.any? %>
+		<div id="error_explanation">
+		<h2><%= pluralize(@venda.errors.count, "error") %> prohibited this venda from being saved:</h2>
+
+		<ul>
+		<% @venda.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>
+		</ul>
+		</div>
+	<% end %>
+
+	<%= f.input :data_da_venda, :as => :string, :input_html => {:class => 'date_picker'} %>
+	<%= f.input :resposavel_pela_venda %>
+	<%= f.association :representante %>
+	<%= f.association :cliente %>
+
+	<hr>
+	<div class="venda_items">
+	<% @venda.venda_items.each do |venda_item| %>
+		<div class="venda_item">
+		<%= f.simple_fields_for venda_item do |vi_form| %>
+			<%= vi_form.input :quantidade %>
+			<%= vi_form.association :produto %>
+			<%= vi_form.input :valor_unit %>
+
+			<%= button_tag "remover", :class => 'remove_item_bttn', :type => 'button'%>
+			<% end %>
+		</div>
+	<% end %>
+	</div>
+
+	<%= f.submit 'salvar' %>
+
+<% end %>

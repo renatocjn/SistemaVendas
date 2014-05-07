@@ -1,0 +1,28 @@
+<h1>Listing movimentacao_de_estoques</h1>
+
+<table>
+<tr>
+	<th>data</th>
+	<th>Tipo de movimentacao</th>
+	<th>Produto</th>
+	<th>quantidade</th>
+	<th>representante</th>
+</tr>
+
+<% @movimentacao_de_estoques.each do |me| %>
+<tr>
+	<td><%= me.dataDaMovimentacao.strftime "%d/%m/%Y" %></td>
+	<td><%= me.tipo_de_movimentacao.descricao %></td>
+	<td><%= link_to me.produto.descricao, me.produto %></td>
+	<td><%= me.quantidade %></td>
+	<td><%= link_to me.representante.nome, me.representante %></td>
+	<td><%= link_to 'Show', me %></td>
+	<td><%= link_to 'Edit', edit_movimentacao_de_estoque_path(me) %></td>
+	<td><%= link_to 'Destroy', me, method: :delete, data: { confirm: 'Tem ceteza que deseja deletar essa movimentacao?' } %></td>
+</tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Movimentacao de estoque', new_movimentacao_de_estoque_path %>

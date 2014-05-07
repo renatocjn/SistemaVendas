@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  tipo_de_pagamento: 
+  venda: 
+  valor: 1.5
+  data_de_entrada: 2014-04-10
+  data_do_pagamento: 2014-04-10
+
+two:
+  tipo_de_pagamento: 
+  venda: 
+  valor: 1.5
+  data_de_entrada: 2014-04-10
+  data_do_pagamento: 2014-04-10

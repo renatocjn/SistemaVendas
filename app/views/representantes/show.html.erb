@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nome:</b>
+  <%= @representante.nome %>
+</p>
+
+<p>
+  <b>Nome abrev:</b>
+  <%= @representante.nome_abrev %>
+</p>
+
+<p>
+  <b>Endereco:</b>
+  <%= @representante.endereco %>
+</p>
+
+<p>
+  <b>Telefone1:</b>
+  <%= @representante.telefone1 %>
+</p>
+
+<p>
+  <b>Telefone2:</b>
+  <%= @representante.telefone2 %>
+</p>
+
+
+<%= link_to 'Edit', edit_representante_path(@representante) %> |
+<%= link_to 'Back', representantes_path %>

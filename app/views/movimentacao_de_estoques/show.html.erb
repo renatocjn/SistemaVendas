@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Observacoes:</b>
+  <%= @movimentacao_de_estoque.observacoes %>
+</p>
+
+<p>
+  <b>Quantidade:</b>
+  <%= @movimentacao_de_estoque.quantidade %>
+</p>
+
+<p>
+  <b>Tipo de movimentacao:</b>
+  <%= @movimentacao_de_estoque.tipo_de_movimentacao.descricao %>
+</p>
+
+<p>
+  <b>Produto:</b>
+  <%= link_to @movimentacao_de_estoque.produto.descricao, @movimentacao_de_estoque.produto %>
+</p>
+
+<p>
+  <b>Representante:</b>
+  <%= link_to @movimentacao_de_estoque.representante.nome, @movimentacao_de_estoque.representante%>
+</p>
+
+<p>
+  <b>Usuario:</b>
+  <%= @movimentacao_de_estoque.usuario.username %>
+</p>
+
+<p>
+  <b>Datadamovimentacao:</b>
+  <%= @movimentacao_de_estoque.dataDaMovimentacao.strftime "%d/%m/%Y" %>
+</p>
+
+
+<%= link_to 'Edit', edit_movimentacao_de_estoque_path(@movimentacao_de_estoque) %> |
+<%= link_to 'Back', movimentacao_de_estoques_path %>

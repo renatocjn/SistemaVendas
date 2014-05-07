@@ -1,0 +1,20 @@
+<div class="venda_items">
+<%= @venda.venda_items.size %>
+<% @venda.venda_items.each do |venda_item| %>
+	<% new_or_existing = venda_item.new_record? ? 'new' : 'existing' %>
+	<% prefix = "venda[#{new_or_existing}_task_attributes][]" %>
+
+	<div class="venda_item">
+	antes
+	<% f.simple_fields_for venda_item do |vi_form| %>
+		dentro
+		<%= vi_form.input :quantidade %>
+		<%= vi_form.association :produto %>
+		<%= vi_form.input :valor_unit %>
+
+		<%= link_to_function "remove" , "$(this).up('.venda_item').remove()" %>
+		<% end %>
+	depois
+	</div>
+<% end %>
+</div>

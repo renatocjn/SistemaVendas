@@ -1,0 +1,24 @@
+<h1>Listing grupo_de_despesas</h1>
+
+<table>
+  <tr>
+    <th>Data das despesas</th>
+    <th>Descricao</th>
+    <th>Usuario</th>
+  </tr>
+
+<% @grupo_de_despesas.each do |grupo_de_despesa| %>
+  <tr>
+	<td><%= grupo_de_despesa.data_das_despesas.strftime "%d/%m/%Y" %></td>
+    <td><%= grupo_de_despesa.descricao %></td>
+    <td><%= grupo_de_despesa.usuario.username %></td>
+    <td><%= link_to 'Show', grupo_de_despesa %></td>
+    <td><%= link_to 'Edit', edit_grupo_de_despesa_path(grupo_de_despesa) %></td>
+    <td><%= link_to 'Destroy', grupo_de_despesa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Grupo de despesa', new_grupo_de_despesa_path %>

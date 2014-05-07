@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Descricao:</b>
+  <%= @grupo_de_despesa.descricao %>
+</p>
+
+<p>
+  <b>Data das despesas:</b>
+  <%= @grupo_de_despesa.data_das_despesas.strftime "%d/%m/%Y" %>
+</p>
+
+<p>
+  <b>Usuario:</b>
+  <%= @grupo_de_despesa.usuario.username %>
+</p>
+
+
+<%= link_to 'Edit', edit_grupo_de_despesa_path(@grupo_de_despesa) %> |
+<%= link_to 'Back', grupo_de_despesas_path %>

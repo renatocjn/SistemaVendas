@@ -1,0 +1,22 @@
+<%= simple_form_for @movimentacao_de_estoque do |f| %>
+  <% if @movimentacao_de_estoque.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@movimentacao_de_estoque.errors.count, "error") %> prohibited this movimentacao_de_estoque from being saved:</h2>
+
+      <ul>
+      <% @movimentacao_de_estoque.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+	<%= f.input :observacoes %>
+    <%= f.input :quantidade %>
+    <%= f.association :tipo_de_movimentacao %>
+    <%= f.association :produto %>
+    <%= f.association :representante %>
+    <%= f.input :dataDaMovimentacao, :as => :string, :input_html => {class: 'date_picker'} %>
+    <%= f.submit %>
+
+<% end %>

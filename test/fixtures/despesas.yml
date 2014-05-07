@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  descricao: MyString
+  valor: 1.5
+  grupo_de_despesa: 
+
+two:
+  descricao: MyString
+  valor: 1.5
+  grupo_de_despesa: 
